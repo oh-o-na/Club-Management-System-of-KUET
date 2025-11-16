@@ -27,7 +27,7 @@ void createEvent(const char *clubName) {
     fgets(newEvent.venue, sizeof(newEvent.venue), stdin);
     clearNewline(newEvent.venue);
 
-    FILE *file = fopen(eventFilePath, "a"); // "a" for append
+    FILE *file = fopen(eventFilePath, "a");
     if (file == NULL) {
         printf("Error: Could not open events file for %s.\n", clubName);
         return;
@@ -114,4 +114,5 @@ void cancelEvent(const char *clubName) {
     } else {
         printf("Error: No event found with the name '%s' for %s.\n", nameToRemove, clubName);
     }
+
 }
